@@ -1,0 +1,42 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+RecipesApp/dist
+RecipesApp/tmp
+RecipesApp/out-tsc
+RecipesApp/bazel-out
+
+# Node
+RecipesApp/node_modules
+RecipesApp/npm-debug.log
+RecipesApp/yarn-error.log
+
+# IDEs and editors
+RecipesApp/.idea/
+RecipesApp/.project
+RecipesApp/.classpath
+RecipesApp/.c9/
+RecipesApp/*.launch
+RecipesApp/.settings/
+RecipesApp/*.sublime-workspace
+
+# Visual Studio Code
+RecipesApp/.vscode/*
+RecipesApp/!.vscode/settings.json
+RecipesApp/!.vscode/tasks.json
+RecipesApp/!.vscode/launch.json
+RecipesApp/!.vscode/extensions.json
+RecipesApp/.history/*
+
+# Miscellaneous
+RecipesApp/.angular/cache
+RecipesApp/.sass-cache/
+RecipesApp/connect.lock
+RecipesApp/coverage
+RecipesApp/libpeerconnection.log
+RecipesApp/testem.log
+RecipesApp/typings
+
+# System files
+RecipesApp/.DS_Store
+RecipesApp/Thumbs.db
