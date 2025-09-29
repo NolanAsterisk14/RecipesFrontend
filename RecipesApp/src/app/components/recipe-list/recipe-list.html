@@ -1,7 +1,9 @@
 <ul>
-    @for (recipe of recipes; track recipe.id){
-        <li>
-            <app-recipe-preview [recipe]="recipe"></app-recipe-preview>
-        </li> 
-    }   
+    @if (recipes){
+        @for (recipe of recipes; track recipe.id){
+            <li>
+                <app-recipe-preview [recipe]="recipe"></app-recipe-preview>
+            </li> 
+        }   
+    } 
 </ul>

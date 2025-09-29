@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
-  title = signal('Recipes App');
+
 }

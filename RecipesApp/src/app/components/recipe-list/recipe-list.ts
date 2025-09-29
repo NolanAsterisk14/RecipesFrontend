@@ -4,10 +4,11 @@ import { RecipePreview } from "../recipe-preview/recipe-preview";
 
 @Component({
   selector: 'app-recipe-list',
+  standalone: true,
   imports: [RecipePreview],
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.scss'
 })
 export class RecipeList {
-  @Input() recipes: Recipe[] = [];
+  @Input() recipes: Recipe[] | null = [];
 }

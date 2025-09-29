@@ -1,0 +1,25 @@
+@if (recipe$ | async; as recipe) {
+    <div id="recipe-display">
+        <h2 id="title">{{recipe.title}}</h2>
+        <p id="description">{{recipe.description}}</p>
+        <h3>Ingredients</h3>
+        <ul id="ingredients">
+            @for (ingredient of recipe.ingredients.split(';'); track $index) {
+                <li>{{ingredient}}</li>
+            }
+        </ul>
+        <h3>Steps</h3>
+        <ol id="steps">
+            @for (step of recipe.steps.split(';'); track $index){
+                <li>{{step}}</li>
+            }
+        </ol>
+        <h3>Notes</h3>
+        <p id="notes">{{recipe.notes}}</p>
+    </div>  
+}
+@else {
+    <p>Loading...</p>
+}
+
+
