@@ -1,0 +1,23 @@
+h2 {
+    margin-left: 40px;
+    font-size: 28px;
+}
+
+#content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+#recipe-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-recipe-btn {
+    margin: 20px 30px auto auto;
+    padding: 6px 10px;
+    font-size: 18px;
+    text-decoration: underline;
+}

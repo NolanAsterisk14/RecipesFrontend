@@ -1,2 +1,7 @@
-<h2>All Recipes</h2>
-<app-recipe-list [recipes]="recipes$ | async"/>
+<div id="recipe-content">
+    <div id="content-header">
+        <h2>All Recipes</h2>
+        <button id="new-recipe-btn" type="button" [routerLink]="['/add-recipe']">+ Add New Recipe</button>
+    </div>
+    <app-recipe-list [recipes]="recipes$ | async"/>
+</div>

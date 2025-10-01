@@ -1,0 +1,26 @@
+<div id="recipe-form">
+    <h2>Create a New Recipe</h2>
+    <form #recipeForm="ngForm" (ngSubmit)="onSubmit(recipeForm)" novalidate>
+        <div class="form-row">
+            <label>Title</label>
+            <input type="text" name="title" [(ngModel)]="recipe.title" required>
+        </div>
+        <div class="form-row">
+            <label>Description</label>
+            <textarea name="description" [(ngModel)]="recipe.description" required (input)="autoGrow($event.target)"></textarea>
+        </div>
+        <div class="form-row">
+            <label>Ingredients</label>
+            <textarea #ingredientsTextarea name="ingredients" [(ngModel)]="recipe.ingredients" required (keydown)="onIngredientsKeyDown($event)" (input)="autoGrow($event.target)"></textarea>
+        </div>
+        <div class="form-row">
+            <label>Steps</label>
+            <textarea #stepsTextarea name="steps" [(ngModel)]="recipe.steps" required (keydown)="onStepsKeyDown($event)" (input)="autoGrow($event.target)"></textarea>
+        </div>
+        <div class="form-row">
+            <label>Notes</label>
+            <textarea name="notes" [(ngModel)]="recipe.notes" (input)="autoGrow($event.target)"></textarea>
+        </div>
+        <button type="submit" [disabled]="!recipeForm.valid">Save Recipe</button>
+    </form>
+</div>
