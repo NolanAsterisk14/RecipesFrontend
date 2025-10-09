@@ -1,6 +1,12 @@
 @if (recipe$ | async; as recipe) {
     <div id="recipe-display">
-        <h2 id="title">{{recipe.title}}</h2>
+        <div id="recipe-header">
+            <h2 id="title">{{recipe.title}}</h2>
+            <div id="header-buttons">
+                <button type="button" [routerLink]="[`/edit-recipe/${recipe.id}`]">Edit</button>
+                <button type="button" class="cancel-button" (click)="deleteRecipe()">Delete</button> 
+            </div>            
+        </div>
         <p id="description">{{recipe.description}}</p>
         <h3>Ingredients</h3>
         <ul id="ingredients">

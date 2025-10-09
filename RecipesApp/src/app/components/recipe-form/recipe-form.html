@@ -1,0 +1,41 @@
+<div id="recipe-form">
+    <h2>{{ isEditMode ? 'Edit Recipe' : 'Create a New Recipe' }}</h2>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-row">
+            <label>Title</label>
+            <input type="text" formControlName="title">
+        </div>
+        <div class="form-row">
+            <label>Description</label>
+            <textarea formControlName="description" (input)="autoGrow($event.target)"></textarea>
+        </div>
+        <div class="form-row" formArrayName="ingredients">
+            <label>Ingredients</label>
+            @for (ingredient of ingredientsArray.controls; track $index){
+                <div class="list-row">
+                    <input type="text" [formControlName]="$index">
+                    <button type="button" class="cancel-button" (click)="removeIngredient($index)">Remove</button>
+                </div>
+            }
+            <button type="button" (click)="addIngredient()">Add Ingredient</button>
+        </div>
+        <div class="form-row" formArrayName="steps">
+            <label>Steps</label>
+            @for (step of stepsArray.controls; track $index){
+                <div class="list-row">
+                    <textarea (input)="autoGrow($event.target)" [formControlName]="$index"></textarea>
+                    <button type="button" class="cancel-button" (click)="removeStep($index)">Remove</button>
+                </div>
+            }
+            <button type="button" (click)="addStep()">Add Step</button>
+        </div>
+        <div class="form-row">
+            <label>Notes</label>
+            <textarea formControlName="notes" (input)="autoGrow($event.target)"></textarea>
+        </div>
+        <div id="button-row">
+            <button type="button" class="cancel-button" (click)="location.back()">Cancel</button>
+            <button type="submit" [disabled]="!recipeForm.valid">Save Recipe</button>
+        </div>   
+    </form>
+</div>

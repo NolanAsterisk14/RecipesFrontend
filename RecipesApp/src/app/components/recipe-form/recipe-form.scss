@@ -7,10 +7,36 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+#button-row {
+    margin-top: 16px;
+    align-self: flex-end;
+}
+
 .form-row {
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+.list-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.list-row input[type="text"],
+.list-row textarea {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+}
+
+.list-row button {
+    flex: 0 0 auto;
+}
+
+.cancel-button {
+    align-self: flex-end;
 }
 
 form {
@@ -28,7 +54,7 @@ label {
     font-size: 22px;
 }
 
-input, textarea {
+input[type="text"], textarea {
     padding: 8px 12px;
     font-family: inherit;
     font-size: 18px;
@@ -36,18 +62,5 @@ input, textarea {
 }
 
 button[type="submit"] {
-    margin-top: 16px;
-    padding: 10px 20px;
-    width: max-content;
-    align-self: flex-end;
-    font-size: 18px;
-    background: #dbdbdb;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-button[type="submit"]:hover {
-    background: #c7c7c7;
+    margin-left: 20px;
 }
